@@ -27,7 +27,7 @@ def main():
     optp.add_option('-q', '--quiet',    help='No output except to stderr on error', action='store_true')
     (opts, args) = optp.parse_args()
    
-    # Process
+    # Process commandline options
     if opts.ipv4: rtypes.append('A')
     if opts.ipv6: rtypes.append('AAAA')
     domain = opts.domain
