@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import re
 import xmlrpclib
@@ -93,7 +93,7 @@ def main():
         ip_changed = check_if_ip_changed(apikey, zone_id, record, rtype, addresses[rtype])
         if not ip_changed:
             if not quiet:
-				print ("The IP for '" + record + "' did not change")
+               print("The IP for '" + record + "' did not change")
             sys.exit(0) 
     
     # Create a new zone version for zone id
@@ -103,7 +103,7 @@ def main():
         # Update the record for the zone id and zone version
         update_record(apikey, zone_id, version_id, record, rtype, addresses[rtype])
         if not quiet:
-			print record + " " + rtype + " " + addresses[rtype]
+           print(record + " " + rtype + " " + addresses[rtype])
 
     # Activate the new zone
     api.domain.zone.version.set(apikey, zone_id, version_id)
